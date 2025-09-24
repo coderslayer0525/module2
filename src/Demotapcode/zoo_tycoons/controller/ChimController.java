@@ -30,15 +30,15 @@ public class ChimController {
             int chon = Integer.parseInt(scanner.nextLine());
             switch (chon){
                 case ADD_OBJECT :
-                    System.out.println("Mua chim");
-                    Chim chim = ChimView.inputData();
-                    boolean ok = this.chimService.add(chim);
-                    if (ok){
-                        System.out.println("Mua");
-                    }else {
-                        System.out.println("khong mua");
-                    }
-                    break;
+                    ;System.out.println("Mua chim");
+                Chim chim = ChimView.inputData();
+                boolean ok = this.chimService.add(chim);
+                if (ok){
+                    System.out.println("Mua");
+                }else {
+                    System.out.println("khong mua");
+                }
+                break;
                 case DISPLAY_OBJECT:
                     System.out.println("Danh sach Chim");
                     ArrayList<Chim> chimArrayList = this.chimService.findAll();
