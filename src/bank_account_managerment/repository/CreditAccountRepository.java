@@ -41,7 +41,7 @@ public class CreditAccountRepository  implements ICreditAccountRepository{
     @Override
     public CreditAccount findByName(String user) {
         for (int i = 0; i < creditAccountArrayList.size();i++){
-            if (creditAccountArrayList.equals(user)){
+            if (creditAccountArrayList.get(i).getUser().equals(user)){
                 return creditAccountArrayList.get(i);
             }
         }

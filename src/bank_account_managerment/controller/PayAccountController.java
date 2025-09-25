@@ -1,26 +1,27 @@
 package bank_account_managerment.controller;
 
-import Demotapcode.quanly_nhansu_congty.entity.KySu;
-import Demotapcode.quanly_nhansu_congty.view.KySuView;
 import bank_account_managerment.entity.CreditAccount;
-import bank_account_managerment.service.CreditAccountService;
-import bank_account_managerment.service.ICreditAccountService;
+import bank_account_managerment.entity.PayAccount;
+import bank_account_managerment.service.IPayAccountService;
+import bank_account_managerment.service.PayAccountService;
 import bank_account_managerment.view.CreditAccountView;
+import bank_account_managerment.view.PayAccountView;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CreditAccountController {
-    private final ICreditAccountService creditAccountService = new CreditAccountService();
-    public  void displayMenu(){
+public class PayAccountController {
+    private final IPayAccountService payAccountService = new PayAccountService();
+
+    public void displayMenu() {
         Scanner sc = new Scanner(System.in);
         final int ADD_NEWACC = 1;
         final int DISPLAY_KINDOFACC = 2;
         final int DEL_ACC = 3;
-        final int FIND_ACC= 4;
+        final int FIND_ACC = 4;
         final int EXIT = 5;
         boolean flag = true;
-        while (flag){
+        while (flag) {
             System.out.println("===BANK'S ACCOUNT MANAGERMENT===");
             System.out.println("---OPTION---" +
                     "\n 1. Add new account." +
@@ -29,30 +30,30 @@ public class CreditAccountController {
                     "\n 4. Find User." +
                     "\n 5. Back to main menu.");
             int choice = Integer.parseInt(sc.nextLine());
-            switch (choice){
-                case ADD_NEWACC :
+            switch (choice) {
+                case ADD_NEWACC:
                     System.out.println("New User");
-                    CreditAccount creditAccount = CreditAccountView.inputData();
-                    boolean ok = this.creditAccountService.add(creditAccount);
-                    if (ok){
+                    PayAccount payAccount = PayAccountView.inputData();
+                    boolean ok = this.payAccountService.add(payAccount);
+                    if (ok) {
                         System.out.println("SUCCESS.");
-                    }else {
+                    } else {
                         System.out.println("EROR!");
                     }
                     break;
                 case DISPLAY_KINDOFACC:
                     System.out.println("User Database.");
 
-                    ArrayList<CreditAccount> creditAccountArrayList = this.creditAccountService.findAll();
-                    CreditAccountView.display(creditAccountArrayList);
+                    ArrayList<PayAccount> payAccountArrayList = this.payAccountService.findAll();
+                    PayAccountView.display(payAccountArrayList);
                     break;
                 case DEL_ACC:
                     System.out.println("Delete User.");
-                    CreditAccount crd = CreditAccountView.inputData();
-                    boolean not = this.creditAccountService.delete(crd.getIdCard());
-                    if (not){
+                    PayAccount pac = PayAccountView.inputData();
+                    boolean not = this.payAccountService.delete(pac.getIdCard());
+                    if (not) {
                         System.out.println(" Deleted.");
-                    }else {
+                    } else {
                         System.out.println("Try Again !");
                     }
                     break;
@@ -61,10 +62,10 @@ public class CreditAccountController {
                     System.out.println("Input Name :");
                     Scanner scanner = new Scanner(System.in);
                     String name = scanner.nextLine();
-                    CreditAccount found = creditAccountService.findByName(name);
-                    if (found != null){
-                        System.out.println("User :"+ found);
-                    }else {
+                    PayAccount find = payAccountService.findByName(name);
+                    if (find != null) {
+                        System.out.println("User :" + find);
+                    } else {
                         System.out.println("Not Found.");
                     }
                     break;

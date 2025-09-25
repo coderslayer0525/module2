@@ -1,7 +1,7 @@
 package bank_account_managerment.entity;
 
 public abstract class BanksAccount {
-    private int idCard;
+    private static int idCard;
     private String user;
     private int balance;
 
@@ -21,7 +21,7 @@ public abstract class BanksAccount {
         this.balance = balance;
     }
 
-    public int getIdCard() {
+    public static int getIdCard() {
         return idCard;
     }
 
