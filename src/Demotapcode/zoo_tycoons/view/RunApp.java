@@ -47,7 +47,6 @@ public class RunApp {
                     break;
                 case  4:
                     System.out.println("Thoat app");
-                    break;
                 default:
                     drag = false;
             }
