@@ -19,7 +19,8 @@ public class ChienBinhController {
         final int DISPLAY_OPPTIONS = 1;
         final int ADD_CHAR = 2;
         final int REMOVE_CHAR = 3;
-        final int EXIT = 4;
+        final  int SEARCH = 4;
+        final int EXIT = 5;
         boolean flag = true;
         while (flag) {
             System.out.println("-< CHIEN BINH SKILL >-");
@@ -27,7 +28,8 @@ public class ChienBinhController {
                     "\n 1. List Chien Binh :" +
                     "\n 2. Tao Chien Binh moi : " +
                     "\n 3. Xoa Chien Binh : " +
-                    "\n 4. Quay lại bản quản ly chính. ");
+                    "\n 4. Tim chien binh : " +
+                    "\n 5. Quay lai ban menu");
             int choice = Integer.parseInt(sc.nextLine());
             switch (choice) {
                 case DISPLAY_OPPTIONS:
@@ -53,6 +55,18 @@ public class ChienBinhController {
                         System.out.println(" Xoa thanh cong ");
                     }else {
                         System.out.println(" khong the tim thay thong tin cua chien binh");
+                    }
+                    break;
+                case  SEARCH:
+                    System.out.println(" Tim Chien Binh ");
+                    System.out.println(" nhap Id :");
+                    Scanner scanner = new Scanner(System.in);
+                    int id = Integer.parseInt(scanner.nextLine());
+                    ChienBinh found = chienBinhService.findById(id);
+                    if (found != null){
+                        System.out.println("tim duoc:"+ found);
+                    }else {
+                        System.out.println(" khong co ID vua nhap");
                     }
                     break;
                 case EXIT:
