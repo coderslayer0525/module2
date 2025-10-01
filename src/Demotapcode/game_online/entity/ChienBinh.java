@@ -1,9 +1,9 @@
 package Demotapcode.game_online.entity;
 
-public class ChienBinh extends NhanVat{
+public class ChienBinh extends NhanVat {
     private int dame;
 
-    public ChienBinh(){
+    public ChienBinh() {
     }
 
     public ChienBinh(int id, String name, int dame) {
@@ -15,31 +15,33 @@ public class ChienBinh extends NhanVat{
     }
 
     public void setDame(int dame) {
-        if (dame < 0){
+        if (dame < 0) {
             throw new IllegalArgumentException("DAME KO DUOC AM");
         }
         this.dame = dame;
     }
-    public ChienBinh(int id,String name,int lever,int healing){
+
+    public ChienBinh(int id, String name, int lever, int healing) {
         super(id, name, lever, healing);
     }
 
-    public ChienBinh(int id, String name, int lever, int healing, int dame){
+    public ChienBinh(int id, String name, int lever, int healing, int dame) {
         super(id, name, lever, healing);
         this.dame = dame;
     }
+
     @Override
     public String toString() {
         return "ChienBinh-{" +
                 "=ID=" + getId() +
                 "=NAME=" + getName() +
                 "=LEVER=" + getLever() +
-                "=HEALING="+ getHealing()+
-                "=DAME="+getDame()+
+                "=HEALING=" + getHealing() +
+                "=DAME=" + getDame() +
                 "}-";
     }
 
     public String getInfoToCSV() {
-        return getId()+","+getName()+","+getLever()+","+getHealing()+","+dame;
+        return getId() + "," + getName() + "," + getLever() + "," + getHealing() + "," + dame;
     }
 }

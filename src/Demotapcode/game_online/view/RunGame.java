@@ -2,6 +2,7 @@ package Demotapcode.game_online.view;
 
 
 import Demotapcode.game_online.controller.ChienBinhController;
+import Demotapcode.game_online.controller.PhapSuController;
 
 import java.util.Scanner;
 
@@ -12,6 +13,7 @@ public class RunGame {
 
         public static void displayMain () {
             ChienBinhController chienBinhController = new ChienBinhController();
+            PhapSuController phapSuController = new PhapSuController();
 
             Scanner sc = new Scanner(System.in);
 
@@ -39,6 +41,7 @@ public class RunGame {
                         break;
                     case PHAPSU:
                         System.out.println(" Quản lý Pháp Sư.");
+                        phapSuController.displayMenu();
                         break;
                     case XATHU:
                         System.out.println(" Quản lý Xạ Thủ. ");
