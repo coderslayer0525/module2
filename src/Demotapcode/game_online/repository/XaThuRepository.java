@@ -37,7 +37,7 @@ public class XaThuRepository implements IXaThuRepository {
     @Override
     public boolean add(XaThu xaThu) {
         List<String> stringList = new ArrayList<>();
-        stringList.add(XaThu.getInfoToCSV());
+        stringList.add(xaThu.getInfoToCSV());
         try {
             ReadAndWriteFile.writeFileCSV(XA_FILE, stringList, true);
             return true;

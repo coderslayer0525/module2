@@ -6,9 +6,6 @@ public class XaThu extends NhanVat {
     public XaThu() {
     }
 
-    public static String getInfoToCSV() {
-        return null;
-    }
 
     public int getRangeShot() {
         return rangeShot;
@@ -22,15 +19,20 @@ public class XaThu extends NhanVat {
         super(id, name, lever, healing);
         this.rangeShot = rangeShot;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "Xa Thu--{" +
-                "=ID=" + getId()+
+                "=ID=" + getId() +
                 "=TEN=" + getName() +
-                "=LEVER=" + getLever()+
+                "=LEVER=" + getLever() +
                 "=HEAL=" + getHealing() +
-                "=RANGESHOT="+getRangeShot()+
+                "=RANGESHOT=" + getRangeShot() +
                 "}--";
     }
 
+    public String getInfoToCSV() {
+        return getId() + "," + getName() + "," + getLever() + "," + getHealing() + "," + rangeShot;
+
+    }
 }

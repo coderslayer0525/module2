@@ -32,7 +32,7 @@ public class XaThuView {
             System.out.println(" Diem mau Nhan Vat :");
             int healing = Integer.parseInt(sc.nextLine());
 
-            System.out.println(" Loai Phep Chinh");
+            System.out.println(" Tam ban");
            int rangeShot = Integer.parseInt(sc.nextLine());
 
             return new XaThu(id,name,lever,healing,rangeShot);
