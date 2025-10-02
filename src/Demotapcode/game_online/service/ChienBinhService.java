@@ -12,7 +12,6 @@ public class ChienBinhService implements IChienBinhService{
     public List<ChienBinh> findAll() {
         return chienBinhRepository.findAll();
     }
-
     @Override
     public boolean add(ChienBinh chienBinh) {
         return chienBinhRepository.add(chienBinh);

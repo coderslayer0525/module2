@@ -3,6 +3,7 @@ package Demotapcode.game_online.view;
 
 import Demotapcode.game_online.controller.ChienBinhController;
 import Demotapcode.game_online.controller.PhapSuController;
+import Demotapcode.game_online.controller.XaThuController;
 
 import java.util.Scanner;
 
@@ -14,6 +15,7 @@ public class RunGame {
         public static void displayMain () {
             ChienBinhController chienBinhController = new ChienBinhController();
             PhapSuController phapSuController = new PhapSuController();
+            XaThuController xaThuController = new XaThuController();
 
             Scanner sc = new Scanner(System.in);
 
@@ -45,6 +47,7 @@ public class RunGame {
                         break;
                     case XATHU:
                         System.out.println(" Quản lý Xạ Thủ. ");
+                        xaThuController.displayMenu();
                         break;
                     case EXIT_PROCESS:
                         System.out.println("Exited");
