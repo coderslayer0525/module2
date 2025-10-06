@@ -1,6 +1,7 @@
 package Demotapcode.game_online.entity;
 
 public class ChienBinh extends NhanVat {
+
     private int dame;
 
     public ChienBinh() {
@@ -10,15 +11,18 @@ public class ChienBinh extends NhanVat {
 
     }
 
+    public ChienBinh(int id, String name, int suDung, String hsx, int theTich) {
+    }
+
     public int getDame() {
         return dame;
     }
 
     public void setDame(int dame) {
-        if (dame < 0) {
-            throw new IllegalArgumentException("DAME KO DUOC AM");
+        if (dame < 10) {
+            throw new IllegalArgumentException("DAME KO DUOC duoi 10");
         }
-        this.dame = dame;
+        setDame(dame);
     }
 
     public ChienBinh(int id, String name, int lever, int healing) {
@@ -27,7 +31,10 @@ public class ChienBinh extends NhanVat {
 
     public ChienBinh(int id, String name, int lever, int healing, int dame) {
         super(id, name, lever, healing);
-        this.dame = dame;
+        if (dame <=10){
+            throw  new IllegalArgumentException("dame ko < 0");
+        }
+        setDame(dame);
     }
 
     @Override
