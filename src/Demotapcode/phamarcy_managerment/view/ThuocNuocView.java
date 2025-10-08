@@ -19,7 +19,7 @@ public class ThuocNuocView {
         }
     }
 
-    public static ThuocNuoc inputData() {
+    public static  ThuocNuoc inputData() {
         try {
             System.out.println(" Ma Thuoc:");
             int id = Integer.parseInt(sc.nextLine());
@@ -30,8 +30,8 @@ public class ThuocNuocView {
                 System.out.print("Nhập tên thuốc (chỉ chữ và khoảng trắng, viết hoa chữ đầu): ");
                 tenThuoc = sc.nextLine().trim();
 
-                if (!tenThuoc.matches("^[A-Z][a-zA-Z]*( [A-Z][a-zA-Z]*)*$")) {
-                    System.out.println("Tên thuốc không hợp lệ. Ví dụ: 'Panadol Extra'");
+                if (!tenThuoc.matches("^[A-Za-z0-9\\- ]{2,50}$")) {
+                    System.out.println("Tên thuốc không hợp lệ. Ví dụ: 'Panadol -Extra-500mg'");
                 } else {
                     break;
                 }
@@ -52,9 +52,9 @@ public class ThuocNuocView {
             System.out.println(" Noi San xuat:");
             String hsx;
             while (true) {
-                System.out.println("Nhap noi san Xuat(chi chu va khoang trang, viet hoa chu dau):");
+                System.out.println("Nhap noi san Xuat(khong dau, viet hoa chu dau.):");
                 hsx = sc.nextLine().trim();
-                if (!hsx.matches("^[A-Z][a-zA-Z]*( [A-Z][a-zA-Z]*)*$")) {
+                if (!hsx.matches("^[A-Z][a-zA-Z ]{1,50}$")) {
                     System.out.println("hang san xuat khong hop le : vi du :'Viet Nam");
                 } else {
                     break;
@@ -62,7 +62,17 @@ public class ThuocNuocView {
             }
 
             System.out.println(" The Tich:");
-            int theTich = Integer.parseInt(sc.nextLine());
+            int theTich;
+            while (true){
+                System.out.println(" thể tích tính theo đơn vi ml:  (vi du : 200)");
+                theTich=Integer.parseInt(sc.nextLine());
+                if(theTich > 100){
+                    System.out.println("Hợp lệ");
+                    break;
+                }else {
+                    break;
+                }
+            }
 
             return new ThuocNuoc(id, tenThuoc, hsd, hsx, theTich);
         } catch (NumberFormatException e) {
