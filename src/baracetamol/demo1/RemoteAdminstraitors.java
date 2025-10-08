@@ -4,8 +4,8 @@ package baracetamol.demo1;
 import java.util.Scanner;
 
 public class RemoteAdminstraitors {
-    private static RemoteAdminstraitors instance ;
-    private  RemoteAdminstraitors() {
+    public static RemoteAdminstraitors instance ;
+    public RemoteAdminstraitors() {
         System.out.println("1");
     }
 

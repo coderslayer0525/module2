@@ -14,12 +14,18 @@ public class ThuocNuoc  extends  Thuoc{
     }
 
     public void setTheTich(int theTich) {
+        if (theTich <= 100){
+            throw new IllegalArgumentException("The tich khong duoc be hon 100ml");
+        }
         this.theTich = theTich;
     }
 
     public ThuocNuoc(int maThuoc, String tenThuoc, int hanSuDung, String hangSanXuat, int theTich) {
         super(maThuoc, tenThuoc, hanSuDung, hangSanXuat);
-        this.theTich = theTich;
+        if (theTich <=100){
+            throw new IllegalArgumentException(" The tich phai > 100");
+        }
+       this.theTich= theTich;
     }
     @Override
     public String toString(){
@@ -33,6 +39,6 @@ public class ThuocNuoc  extends  Thuoc{
     }
 
     public String getInfoToCSV() {
-        return getMaThuoc()+","+getTenThuoc()+","+getHanSuDung()+","+getHangSanXuat()+","+getTheTich();
+        return getMaThuoc()+","+getTenThuoc()+","+getHanSuDung()+","+getHangSanXuat()+","+theTich;
     }
 }

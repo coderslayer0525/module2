@@ -11,18 +11,16 @@ public class ChienBinh extends NhanVat {
 
     }
 
-    public ChienBinh(int id, String name, int suDung, String hsx, int theTich) {
-    }
 
     public int getDame() {
         return dame;
     }
 
     public void setDame(int dame) {
-        if (dame < 10) {
-            throw new IllegalArgumentException("DAME KO DUOC duoi 10");
+        if (dame < 0) {
+            throw new IllegalArgumentException("DAME KO DUOC duoi 0");
         }
-        setDame(dame);
+        this.dame = dame;
     }
 
     public ChienBinh(int id, String name, int lever, int healing) {
@@ -31,10 +29,10 @@ public class ChienBinh extends NhanVat {
 
     public ChienBinh(int id, String name, int lever, int healing, int dame) {
         super(id, name, lever, healing);
-        if (dame <=10){
+        if (dame <=0){
             throw  new IllegalArgumentException("dame ko < 0");
         }
-        setDame(dame);
+        this.dame = dame;
     }
 
     @Override

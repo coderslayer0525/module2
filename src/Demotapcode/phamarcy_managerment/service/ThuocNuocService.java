@@ -15,11 +15,7 @@ public class ThuocNuocService  implements IThuocNuocService{
 
     @Override
     public boolean add(ThuocNuoc thuocNuoc) {
-        if(thuocNuoc.getHanSuDung() < 5){
-            System.out.println("han Su dung phai > 5");
-            return false;
-        }
-        return true;
+       return thuocNuocRepository.add(thuocNuoc);
     }
 
     @Override

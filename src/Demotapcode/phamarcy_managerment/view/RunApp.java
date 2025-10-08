@@ -1,6 +1,7 @@
 package Demotapcode.phamarcy_managerment.view;
 
 import Demotapcode.phamarcy_managerment.controller.ThuocNuocController;
+import Demotapcode.phamarcy_managerment.controller.ThuocVienController;
 
 import java.util.Scanner;
 
@@ -13,6 +14,7 @@ public class RunApp {
 
     public static void displayMain() {
         ThuocNuocController thuocNuocController = new ThuocNuocController();
+        ThuocVienController thuocVienController = new ThuocVienController();
 
 
         Scanner sc = new Scanner(System.in);
@@ -40,6 +42,7 @@ public class RunApp {
                     break;
                 case THUOCVIEN:
                     System.out.println(" Quản lý Thuốc Vien.");
+                    thuocVienController.displayMenu();
                     break;
                 case THUOCTIEM:
                     System.out.println(" Quản lý Thuoc TIem ");

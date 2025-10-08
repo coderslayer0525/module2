@@ -1,7 +1,6 @@
 package Demotapcode.phamarcy_managerment.repository;
 
 
-import Demotapcode.game_online.entity.ChienBinh;
 import Demotapcode.phamarcy_managerment.entity.Thuoc;
 import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
 import ss8_cleanCode_mvc.util.ReadAndWriteFile;
@@ -10,17 +9,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ThuocNuocRepository implements IThuocNuocRepository {
-    public final String THUOC_FILE = "Demotapcode/phamarcy_managerment/data/thuocnuoc.csv";
+    public final String THUOC_NUOC = "Demotapcode/phamarcy_managerment/data/thuocnuoc.csv";
 
     @Override
     public List<ThuocNuoc> findAll() {
         List<ThuocNuoc> thuocNuocList = new ArrayList<>();
         try {
-            List<String> stringList = ReadAndWriteFile.readFileCSV(THUOC_FILE);
+            List<String> stringList = ReadAndWriteFile.readFileCSV(THUOC_NUOC);
             for (String line : stringList) {
                 if (line.trim().isEmpty()) continue;
                 String[] array = line.split(",");
-                if (array.length != 5){
+                if (array.length < 3){
                     System.out.println("dong du lieu loi" + line);
                     continue;
                 }
@@ -38,13 +37,15 @@ public class ThuocNuocRepository implements IThuocNuocRepository {
             System.out.println("lỗi đọc file" + e.getMessage());
             e.printStackTrace();
         }
-        return thuocNuocList;
+        return  thuocNuocList;
     }
 
     @Override
     public boolean add(ThuocNuoc thuocNuoc) {
+        List<String> stringList = new ArrayList<>();
+        stringList.add(thuocNuoc.getInfoToCSV());
         try {
-            ReadAndWriteFile.writeFileCSV(THUOC_FILE, List.of(thuocNuoc.getInfoToCSV()), true);
+            ReadAndWriteFile.writeFileCSV(THUOC_NUOC, stringList, true);
             return true;
         } catch (Exception e) {
             System.out.println("loi ghi file" + e.getMessage());
@@ -62,7 +63,7 @@ public class ThuocNuocRepository implements IThuocNuocRepository {
                 for (ThuocNuoc t : thuocNuocList) {
                     stringList.add(t.getInfoToCSV());
                 }
-                ReadAndWriteFile.writeFileCSV(THUOC_FILE, stringList, false);
+                ReadAndWriteFile.writeFileCSV(THUOC_NUOC, stringList, false);
             }
             return removed;
         } catch (Exception e) {
@@ -73,14 +74,16 @@ public class ThuocNuocRepository implements IThuocNuocRepository {
 
 
     @Override
-    public boolean update(int maThuoc, ThuocNuoc thuocNuoc) {
+    public boolean update(int maThuoc, ThuocNuoc newThuocNuoc) {
         try {
             List<ThuocNuoc> thuocNuocList = findAll();
             for (ThuocNuoc t : thuocNuocList) {
                 if (t.getMaThuoc() == maThuoc) {
-                    Thuoc newMaThuoc = null;
-                    t.setMaThuoc(newMaThuoc.getMaThuoc());
-                    t.setTenThuoc(newMaThuoc.getTenThuoc());
+                    t.setMaThuoc(newThuocNuoc.getMaThuoc());
+                    t.setTenThuoc(newThuocNuoc.getTenThuoc());
+                    t.setHanSuDung(newThuocNuoc.getHanSuDung());
+                    t.setHangSanXuat(newThuocNuoc.getHangSanXuat());
+                    t.setTheTich(newThuocNuoc.getTheTich());
                     break;
                 }
             }
@@ -88,7 +91,7 @@ public class ThuocNuocRepository implements IThuocNuocRepository {
             for (ThuocNuoc t : thuocNuocList) {
                 stringList.add(t.getInfoToCSV());
             }
-            ReadAndWriteFile.writeFileCSV(THUOC_FILE, stringList, false);
+            ReadAndWriteFile.writeFileCSV(THUOC_NUOC, stringList, false);
             return true;
         } catch (Exception e) {
             System.out.println("Loi DU lieu" + e.getMessage());

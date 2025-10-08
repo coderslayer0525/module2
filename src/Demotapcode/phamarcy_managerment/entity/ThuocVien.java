@@ -31,4 +31,7 @@ public class ThuocVien extends Thuoc {
                 "=SoVien"+ getSoVien()+
                 "}--";
     }
+    public String getInfoToCSV() {
+        return getMaThuoc() + "," + getTenThuoc() + "," + getHanSuDung() + "," + getHangSanXuat() + "," + soVien;
+    }
 }

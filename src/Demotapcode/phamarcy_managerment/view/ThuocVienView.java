@@ -1,25 +1,25 @@
 package Demotapcode.phamarcy_managerment.view;
 
-
 import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
+import Demotapcode.phamarcy_managerment.entity.ThuocVien;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class ThuocNuocView {
+public class ThuocVienView {
     private static Scanner sc = new Scanner(System.in);
 
-    public static void display(List<ThuocNuoc> thuocNuocList) {
-        if (thuocNuocList.isEmpty()) {
+    public static void display(List<ThuocVien> thuocVienList) {
+        if (thuocVienList.isEmpty()) {
             System.out.println("DANH SACH TRONG");
             return;
         }
-        for (ThuocNuoc thuocNuoc : thuocNuocList) {
-            System.out.println(thuocNuoc);
+        for (ThuocVien thuocVien : thuocVienList) {
+            System.out.println(thuocVien);
         }
     }
 
-    public static ThuocNuoc inputData() {
+    public static ThuocVien inputData() {
         try {
             System.out.println(" Ma Thuoc:");
             int id = Integer.parseInt(sc.nextLine());
@@ -61,10 +61,10 @@ public class ThuocNuocView {
                 }
             }
 
-            System.out.println(" The Tich:");
+            System.out.println(" so vien:");
             int theTich = Integer.parseInt(sc.nextLine());
 
-            return new ThuocNuoc(id, tenThuoc, hsd, hsx, theTich);
+            return new ThuocVien(id, tenThuoc, hsd, hsx, theTich);
         } catch (NumberFormatException e) {
             return null;
         }

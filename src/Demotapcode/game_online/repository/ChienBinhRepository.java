@@ -20,7 +20,9 @@ public class ChienBinhRepository implements IChienBinhRepository {
                 String[] array = line.split(",");
                 if (array.length < 3) continue;
                 try {
-                    ChienBinh chienBinh = new ChienBinh(Integer.parseInt(array[0]), array[1], Integer.parseInt(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4]));
+                    ChienBinh chienBinh = new ChienBinh(Integer.parseInt(array[0]), array[1],
+                            Integer.parseInt(array[2]), Integer.parseInt(array[3]),
+                                Integer.parseInt(array[4]));
                     chienBinhList.add(chienBinh);
                 } catch (NumberFormatException e) {
                     System.out.println(" Du lieu khong hop le:" + line);

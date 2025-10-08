@@ -31,4 +31,8 @@ public class ThuocTiem extends Thuoc{
                 "=LieuLuong=" + getLieuLuong() +
                 "}--";
     }
+
+    public String getInfoToCSV(){
+        return getMaThuoc()+ ","+ getTenThuoc()+","+getHanSuDung()+","+getHangSanXuat()+","+lieuLuong;
+    }
 }

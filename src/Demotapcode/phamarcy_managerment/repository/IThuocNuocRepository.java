@@ -11,7 +11,7 @@ public interface IThuocNuocRepository {
 
     boolean delete(int maThuoc);
 
-    boolean update(int maThuoc, ThuocNuoc thuocNuoc);
+    boolean update(int maThuoc, ThuocNuoc newThuocNuoc);
 
     ThuocNuoc findById(int maThuoc);
 
