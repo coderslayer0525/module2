@@ -15,12 +15,16 @@ public class MotorbikesView {
     }
 
     public static Motorbikes inputData() {
+
         System.out.println("số khung xe máy");
         int id = Integer.parseInt(scanner.nextLine());
+
         System.out.println("model xe ");
         String model = scanner.nextLine();
+
         System.out.println(" xé gió không ");
         int power = Integer.parseInt(scanner.nextLine());
+
         Motorbikes motorbikes = new Motorbikes(id, model, power);
         return motorbikes;
     }

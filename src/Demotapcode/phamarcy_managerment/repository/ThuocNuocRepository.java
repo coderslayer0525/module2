@@ -3,6 +3,7 @@ package Demotapcode.phamarcy_managerment.repository;
 
 import Demotapcode.phamarcy_managerment.entity.Thuoc;
 import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
+import Demotapcode.phamarcy_managerment.entity.ThuocVien;
 import ss8_cleanCode_mvc.util.ReadAndWriteFile;
 
 import java.util.ArrayList;
@@ -39,9 +40,24 @@ public class ThuocNuocRepository implements IThuocNuocRepository {
         }
         return  thuocNuocList;
     }
+    public int getNextId() {
+        List<ThuocNuoc> thuocNuocList = findAll();
+        if (thuocNuocList.isEmpty()) {
+            return 1;
+        }
+        int maxId = 0;
+        for (ThuocNuoc t : thuocNuocList) {
+            if (t.getMaThuoc() > maxId) {
+                maxId = t.getMaThuoc();
+            }
+        }
+        return maxId + 1;
+    }
 
     @Override
     public boolean add(ThuocNuoc thuocNuoc) {
+        int nextId = getNextId();
+        thuocNuoc.setMaThuoc(nextId);
         List<String> stringList = new ArrayList<>();
         stringList.add(thuocNuoc.getInfoToCSV());
         try {

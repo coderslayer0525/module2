@@ -1,6 +1,7 @@
 package Demotapcode.phamarcy_managerment.view;
 
 import Demotapcode.phamarcy_managerment.controller.ThuocNuocController;
+import Demotapcode.phamarcy_managerment.controller.ThuocTiemController;
 import Demotapcode.phamarcy_managerment.controller.ThuocVienController;
 
 import java.util.Scanner;
@@ -15,6 +16,7 @@ public class RunApp {
     public static void displayMain() {
         ThuocNuocController thuocNuocController = new ThuocNuocController();
         ThuocVienController thuocVienController = new ThuocVienController();
+        ThuocTiemController thuocTiemController = new ThuocTiemController();
 
 
         Scanner sc = new Scanner(System.in);
@@ -46,6 +48,7 @@ public class RunApp {
                     break;
                 case THUOCTIEM:
                     System.out.println(" Quản lý Thuoc TIem ");
+                    thuocTiemController.displayMenu();
                     break;
                 case EXIT_PROCESS:
                     System.out.println("Exited");
