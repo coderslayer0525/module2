@@ -11,7 +11,7 @@ public class ThuocVienView {
 
     public static void display(List<ThuocVien> thuocVienList) {
         if (thuocVienList.isEmpty()) {
-            System.out.println("DANH SACH TRONG");
+            System.out.println("Danh sach đang trống");
             return;
         }
         for (ThuocVien thuocVien : thuocVienList) {
@@ -62,9 +62,22 @@ public class ThuocVienView {
             }
 
             System.out.println(" so vien:");
-            int theTich = Integer.parseInt(sc.nextLine());
+            String input;
+            int soVien = 0;
 
-            return new ThuocVien(id, tenThuoc, hsd, hsx, theTich);
+            while (true){
+                System.out.println("chi nhap so nguyen");
+                input = sc.nextLine();
+                if (  input.matches("\\d+")){
+                     soVien = Integer.parseInt(input);
+                    System.out.println("The tich hop le :" + soVien);
+                    break;
+                }else {
+                    System.out.println(" chi nhap dc so");
+                }
+            }
+
+            return new ThuocVien(id, tenThuoc, hsd, hsx, soVien);
         } catch (NumberFormatException e) {
             return null;
         }

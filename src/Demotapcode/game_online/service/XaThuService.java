@@ -1,12 +1,9 @@
 package Demotapcode.game_online.service;
 
-import Demotapcode.game_online.entity.ChienBinh;
 import Demotapcode.game_online.entity.XaThu;
 import Demotapcode.game_online.repository.IXaThuRepository;
 import Demotapcode.game_online.repository.XaThuRepository;
-import ss8_cleanCode_mvc.util.ReadAndWriteFile;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class XaThuService implements IXaThuService{

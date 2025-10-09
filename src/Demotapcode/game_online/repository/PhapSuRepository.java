@@ -1,7 +1,7 @@
 package Demotapcode.game_online.repository;
 
 import Demotapcode.game_online.entity.PhapSu;
-import ss8_cleanCode_mvc.util.ReadAndWriteFile;
+import ss8_mvc_quanly_phuongtien.util.ReadAndWriteFile;
 
 import java.util.ArrayList;
 import java.util.List;

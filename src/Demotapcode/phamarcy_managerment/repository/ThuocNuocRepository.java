@@ -1,10 +1,9 @@
 package Demotapcode.phamarcy_managerment.repository;
 
 
-import Demotapcode.phamarcy_managerment.entity.Thuoc;
 import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
-import Demotapcode.phamarcy_managerment.entity.ThuocVien;
-import ss8_cleanCode_mvc.util.ReadAndWriteFile;
+import Demotapcode.phamarcy_managerment.exception.ThuocException;
+import ss8_mvc_quanly_phuongtien.util.ReadAndWriteFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,8 +79,12 @@ public class ThuocNuocRepository implements IThuocNuocRepository {
                     stringList.add(t.getInfoToCSV());
                 }
                 ReadAndWriteFile.writeFileCSV(THUOC_NUOC, stringList, false);
+            }else {
+                throw new ThuocException("Id not found");
             }
             return removed;
+        }catch (ThuocException e){
+            System.out.println(e.getMessage());
         } catch (Exception e) {
             System.out.println("nhap sai thong tin" + e.getMessage());
         }

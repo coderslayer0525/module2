@@ -11,7 +11,7 @@ public class ThuocTiemView {
 
     public static void display(List<ThuocTiem> thuocTiemList) {
         if (thuocTiemList.isEmpty()) {
-            System.out.println("DANH SACH TRONG");
+            System.out.println("Danh sach đang trống");
             return;
         }
         for (ThuocTiem thuocTiem : thuocTiemList) {

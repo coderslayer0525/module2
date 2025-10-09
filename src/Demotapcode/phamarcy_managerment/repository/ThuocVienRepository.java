@@ -1,9 +1,7 @@
 package Demotapcode.phamarcy_managerment.repository;
 
-import Demotapcode.phamarcy_managerment.entity.Thuoc;
-import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
 import Demotapcode.phamarcy_managerment.entity.ThuocVien;
-import ss8_cleanCode_mvc.util.ReadAndWriteFile;
+import ss8_mvc_quanly_phuongtien.util.ReadAndWriteFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,7 +72,7 @@ public class ThuocVienRepository implements IThuocVienRepository {
     public boolean delete(int maThuoc) {
         try {
             List<ThuocVien> thuocVienList = findAll();
-            boolean removed = thuocVienList.removeIf(v -> v.getMaThuoc() == maThuoc);
+            boolean removed = thuocVienList.removeIf( v->v.getMaThuoc() == maThuoc);
             if (removed) {
                 List<String> stringList = new ArrayList<>();
                 for (ThuocVien v : thuocVienList) {

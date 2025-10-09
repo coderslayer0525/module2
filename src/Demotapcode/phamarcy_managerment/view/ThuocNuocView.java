@@ -11,7 +11,7 @@ public class ThuocNuocView {
 
     public static void display(List<ThuocNuoc> thuocNuocList) {
         if (thuocNuocList.isEmpty()) {
-            System.out.println("DANH SACH TRONG");
+            System.out.println("Danh sách đang trống.");
             return;
         }
         for (ThuocNuoc thuocNuoc : thuocNuocList) {
@@ -33,11 +33,12 @@ public class ThuocNuocView {
                 if (!tenThuoc.matches("^[A-Za-z0-9\\- ]{2,50}$")) {
                     System.out.println("Tên thuốc không hợp lệ. Ví dụ: 'Panadol -Extra-500mg'");
                 } else {
+                    System.out.println("Hợp lệ :");
                     break;
                 }
             }
 
-            System.out.println("Han su dung");
+            System.out.println("Han su dung(tháng)");
             int hsd;
             while (true) {
                 System.out.print("Nhập hạn sử dụng (> 5 thang): ");
@@ -57,6 +58,7 @@ public class ThuocNuocView {
                 if (!hsx.matches("^[A-Z][a-zA-Z ]{1,50}$")) {
                     System.out.println("hang san xuat khong hop le : vi du :'Viet Nam");
                 } else {
+                    System.out.println("Đã nhập.");
                     break;
                 }
             }

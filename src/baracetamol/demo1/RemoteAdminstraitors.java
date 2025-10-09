@@ -9,7 +9,7 @@ public class RemoteAdminstraitors {
         System.out.println("1");
     }
 
-     synchronized public static RemoteAdminstraitors getInstance() {
+      public synchronized  static RemoteAdminstraitors getInstance() {
         if (instance == null) {
             instance = new RemoteAdminstraitors();
         }

@@ -1,8 +1,7 @@
 package Demotapcode.phamarcy_managerment.repository;
 
-import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
 import Demotapcode.phamarcy_managerment.entity.ThuocTiem;
-import ss8_cleanCode_mvc.util.ReadAndWriteFile;
+import ss8_mvc_quanly_phuongtien.util.ReadAndWriteFile;
 
 import java.util.ArrayList;
 import java.util.List;
