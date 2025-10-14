@@ -114,11 +114,11 @@ public class ThuocVienRepository implements IThuocVienRepository {
     }
 
     @Override
-    public ThuocVien findById(int maThuoc) {
+    public ThuocVien findByName(String tenThuoc) {
         try {
             List<ThuocVien> thuocVienList = findAll();
             for (ThuocVien v : thuocVienList) {
-                if (v.getMaThuoc() == maThuoc) {
+                if (v.getTenThuoc().equalsIgnoreCase(tenThuoc)) {
                     return v;
                 }
             }

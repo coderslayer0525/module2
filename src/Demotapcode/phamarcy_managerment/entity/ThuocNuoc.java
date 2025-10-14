@@ -1,12 +1,13 @@
 package Demotapcode.phamarcy_managerment.entity;
 
-public class ThuocNuoc  extends  Thuoc{
+public class ThuocNuoc extends Thuoc {
     private int theTich;
 
-    public ThuocNuoc(){
+    public ThuocNuoc() {
     }
-    public ThuocNuoc(int maThuoc,String tenThuoc,int hanSuDung,String hangSanXuat){
-        super(maThuoc,tenThuoc,hanSuDung,hangSanXuat);
+
+    public ThuocNuoc(int maThuoc, String tenThuoc, int hanSuDung, String hangSanXuat) {
+        super(maThuoc, tenThuoc, hanSuDung, hangSanXuat);
     }
 
     public int getTheTich() {
@@ -14,7 +15,7 @@ public class ThuocNuoc  extends  Thuoc{
     }
 
     public void setTheTich(int theTich) {
-        if (theTich <= 100){
+        if (theTich <= 100) {
             throw new IllegalArgumentException("The tich khong duoc be hon 100ml");
         }
         this.theTich = theTich;
@@ -22,23 +23,24 @@ public class ThuocNuoc  extends  Thuoc{
 
     public ThuocNuoc(int maThuoc, String tenThuoc, int hanSuDung, String hangSanXuat, int theTich) {
         super(maThuoc, tenThuoc, hanSuDung, hangSanXuat);
-        if (theTich <=100){
+        if (theTich <= 100) {
             throw new IllegalArgumentException(" The tich phai > 100");
         }
-       this.theTich= theTich;
+        this.theTich = theTich;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "ThuocNuoc--{" +
-                "=ID="+ getMaThuoc()+
-                "=TenThuoc="+getTenThuoc()+
-                "=HanSuDung=" + getHanSuDung()+
-                "=HangSanXuat=" + getHangSanXuat()+
-                "=TheTich=" + getTheTich()+
+                "=ID=" + getMaThuoc() +
+                "=TenThuoc=" + getTenThuoc() +
+                "=HanSuDung=" + getHanSuDung() +
+                "=HangSanXuat=" + getHangSanXuat() +
+                "=TheTich=" + getTheTich() +
                 "}--";
     }
 
     public String getInfoToCSV() {
-        return getMaThuoc()+","+getTenThuoc()+","+getHanSuDung()+","+getHangSanXuat()+","+theTich;
+        return getMaThuoc() + "," + getTenThuoc() + "," + getHanSuDung() + "," + getHangSanXuat() + "," + theTich;
     }
 }

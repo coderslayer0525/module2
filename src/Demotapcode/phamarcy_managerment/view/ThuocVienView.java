@@ -1,6 +1,5 @@
 package Demotapcode.phamarcy_managerment.view;
 
-import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
 import Demotapcode.phamarcy_managerment.entity.ThuocVien;
 
 import java.util.List;

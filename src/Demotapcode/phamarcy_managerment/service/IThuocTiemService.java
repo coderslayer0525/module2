@@ -1,6 +1,5 @@
 package Demotapcode.phamarcy_managerment.service;
 
-import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
 import Demotapcode.phamarcy_managerment.entity.ThuocTiem;
 
 import java.util.List;
@@ -14,5 +13,5 @@ public interface IThuocTiemService {
 
     boolean update(int maThuoc, ThuocTiem newThuocTiem);
 
-    ThuocTiem findById(int maThuoc);
+    ThuocTiem findByName(String tenThuoc);
 }

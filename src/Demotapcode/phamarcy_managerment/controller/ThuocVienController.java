@@ -1,10 +1,8 @@
 package Demotapcode.phamarcy_managerment.controller;
 
-import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
 import Demotapcode.phamarcy_managerment.entity.ThuocVien;
 import Demotapcode.phamarcy_managerment.service.IThuocVienService;
 import Demotapcode.phamarcy_managerment.service.ThuocVienService;
-import Demotapcode.phamarcy_managerment.view.ThuocNuocView;
 import Demotapcode.phamarcy_managerment.view.ThuocVienView;
 
 import java.util.List;
@@ -60,8 +58,8 @@ public class ThuocVienController {
                     System.out.println(" Tim thuoc ");
                     System.out.println(" nhap Id :");
                     Scanner scanner = new Scanner(System.in);
-                    int maThuoc = Integer.parseInt(scanner.nextLine());
-                    ThuocVien found = thuocVienService.findById(maThuoc);
+                    String tenThuoc = scanner.nextLine();
+                    ThuocVien found = thuocVienService.findByName(tenThuoc);
                     if (found != null){
                         System.out.println("tim duoc:"+ found);
                     }else {

@@ -13,6 +13,6 @@ public interface IThuocNuocRepository {
 
     boolean update(int maThuoc, ThuocNuoc newThuocNuoc);
 
-    ThuocNuoc findById(int maThuoc);
+    ThuocNuoc findByName(String tenThuoc);
 
 }

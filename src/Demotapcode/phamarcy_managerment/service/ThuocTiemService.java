@@ -1,7 +1,6 @@
 package Demotapcode.phamarcy_managerment.service;
 
 
-import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
 import Demotapcode.phamarcy_managerment.entity.ThuocTiem;
 import Demotapcode.phamarcy_managerment.repository.IThuocTiemRepository;
 import Demotapcode.phamarcy_managerment.repository.ThuocTiemRepository;
@@ -31,7 +30,7 @@ public class ThuocTiemService implements IThuocTiemService {
     }
 
     @Override
-    public ThuocTiem findById(int maThuoc) {
-        return thuocTiemRepository.findById(maThuoc);
+    public ThuocTiem findByName(String tenThuoc) {
+        return thuocTiemRepository.findByName(tenThuoc);
     }
 }

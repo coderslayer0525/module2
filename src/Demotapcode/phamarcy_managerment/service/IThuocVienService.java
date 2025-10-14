@@ -13,5 +13,5 @@ public interface IThuocVienService {
 
     boolean update(int maThuoc, ThuocVien newThuocVien);
 
-    ThuocVien findById(int maThuoc);
+    ThuocVien findByName(String tenThuoc);
 }

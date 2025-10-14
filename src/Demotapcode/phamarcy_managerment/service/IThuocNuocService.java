@@ -13,5 +13,5 @@ public interface IThuocNuocService {
 
     boolean update(int maThuoc, ThuocNuoc newThuocNuoc);
 
-    ThuocNuoc findById(int maThuoc);
+    ThuocNuoc findByName(String tenThuoc);
 }

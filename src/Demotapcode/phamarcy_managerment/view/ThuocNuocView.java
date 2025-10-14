@@ -19,7 +19,7 @@ public class ThuocNuocView {
         }
     }
 
-    public static  ThuocNuoc inputData() {
+    public static ThuocNuoc inputData() {
         try {
             System.out.println(" Ma Thuoc:");
             int id = Integer.parseInt(sc.nextLine());

@@ -13,5 +13,5 @@ public interface IThuocTiemRepository {
 
     boolean update(int maThuoc, ThuocTiem newThuocTiem);
 
-    ThuocTiem findById(int maThuoc);
+    ThuocTiem findByName(String tenThuoc);
 }

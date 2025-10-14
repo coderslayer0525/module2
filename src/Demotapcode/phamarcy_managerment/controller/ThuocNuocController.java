@@ -1,9 +1,5 @@
 package Demotapcode.phamarcy_managerment.controller;
 
-import Demotapcode.game_online.entity.ChienBinh;
-import Demotapcode.game_online.service.ChienBinhService;
-import Demotapcode.game_online.service.IChienBinhService;
-import Demotapcode.game_online.view.ChienBinhView;
 import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
 import Demotapcode.phamarcy_managerment.service.IThuocNuocService;
 import Demotapcode.phamarcy_managerment.service.ThuocNuocService;
@@ -62,14 +58,14 @@ public class ThuocNuocController {
                     break;
                 case  SEARCH:
                     System.out.println(" Tim thuoc ");
-                    System.out.println(" nhap Id :");
+                    System.out.println(" nhap ten :");
                     Scanner scanner = new Scanner(System.in);
-                    int maThuoc = Integer.parseInt(scanner.nextLine());
-                    ThuocNuoc found = thuocNuocService.findById(maThuoc);
+                    String tenThuoc = scanner.nextLine();
+                    ThuocNuoc found = thuocNuocService.findByName(tenThuoc);
                     if (found != null){
                         System.out.println("tim duoc:"+ found);
                     }else {
-                        System.out.println(" khong co ID vua nhap");
+                        System.out.println(" khong co ten vua nhap");
                     }
                     break;
                 case EXIT:

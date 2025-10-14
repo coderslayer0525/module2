@@ -29,7 +29,7 @@ public class ThuocNuocService  implements IThuocNuocService{
     }
 
     @Override
-    public ThuocNuoc findById(int maThuoc) {
-        return thuocNuocRepository.findById(maThuoc);
+    public ThuocNuoc findByName(String tenThuoc) {
+        return thuocNuocRepository.findByName(tenThuoc);
     }
 }

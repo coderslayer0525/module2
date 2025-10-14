@@ -1,12 +1,12 @@
 package Demotapcode.phamarcy_managerment.repository;
 
-
 import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
 import Demotapcode.phamarcy_managerment.exception.ThuocException;
 import ss8_mvc_quanly_phuongtien.util.ReadAndWriteFile;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class ThuocNuocRepository implements IThuocNuocRepository {
     public final String THUOC_NUOC = "Demotapcode/phamarcy_managerment/data/thuocnuoc.csv";
@@ -24,7 +24,7 @@ public class ThuocNuocRepository implements IThuocNuocRepository {
                     continue;
                 }
                 try {
-                    ThuocNuoc thuocNuoc = new ThuocNuoc(Integer.parseInt(array[0]), array[1],
+                   ThuocNuoc thuocNuoc = new ThuocNuoc(Integer.parseInt(array[0]), array[1],
                             Integer.parseInt(array[2]), array[3],
                             Integer.parseInt(array[4])
                     );
@@ -72,7 +72,12 @@ public class ThuocNuocRepository implements IThuocNuocRepository {
     public boolean delete(int maThuoc) {
         try {
             List<ThuocNuoc> thuocNuocList = findAll();
-            boolean removed = thuocNuocList.removeIf(t -> t.getMaThuoc() == maThuoc);
+            boolean removed = thuocNuocList.removeIf(new Predicate<ThuocNuoc>() {
+                @Override
+                public boolean test(ThuocNuoc t) {
+                    return t.getMaThuoc()==maThuoc;
+                }
+            });
             if (removed) {
                 List<String> stringList = new ArrayList<>();
                 for (ThuocNuoc t : thuocNuocList) {
@@ -119,11 +124,11 @@ public class ThuocNuocRepository implements IThuocNuocRepository {
     }
 
     @Override
-    public ThuocNuoc findById(int maThuoc) {
+    public ThuocNuoc findByName(String tenThuoc) {
         try {
             List<ThuocNuoc> thuocNuocList = findAll();
             for (ThuocNuoc t : thuocNuocList) {
-                if (t.getMaThuoc() == maThuoc) {
+                if (t.getTenThuoc().equalsIgnoreCase(tenThuoc)) {
                     return t;
                 }
             }

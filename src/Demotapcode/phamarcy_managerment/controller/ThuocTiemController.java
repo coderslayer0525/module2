@@ -61,14 +61,14 @@ public class ThuocTiemController {
                     break;
                 case SEARCH:
                     System.out.println(" Tim thuoc ");
-                    System.out.println(" nhap Id :");
+                    System.out.println(" nhap ten thuoc :");
                     Scanner scanner = new Scanner(System.in);
-                    int maThuoc = Integer.parseInt(scanner.nextLine());
-                    ThuocTiem found = thuocTiemService.findById(maThuoc);
+                    String tenThuocTiem = scanner.nextLine();
+                    ThuocTiem found = thuocTiemService.findByName(tenThuocTiem);
                     if (found != null) {
                         System.out.println("tim duoc:" + found);
                     } else {
-                        System.out.println(" khong co ID vua nhap");
+                        System.out.println(" khong co ten vua nhap");
                     }
                     break;
                 case EXIT:
