@@ -2,6 +2,7 @@ package Demotapcode.robot_automatic.repository;
 
 
 import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
+import Demotapcode.phamarcy_managerment.entity.ThuocTiem;
 import Demotapcode.robot_automatic.entity.EntertainmentRobots;
 import ss8_mvc_quanly_phuongtien.util.ReadAndWriteFile;
 
@@ -68,6 +69,20 @@ public class EntertainmentRobotRepository implements  IEntertainmentRobotReposit
 
     @Override
     public boolean delete(int id) {
+        try {
+            List<EntertainmentRobots> entertainmentRobotsList = findAll();
+            boolean removed = entertainmentRobotsList.removeIf(et -> et.getId() == id);
+            if (removed) {
+                List<String> stringList = new ArrayList<>();
+                for (EntertainmentRobots et : entertainmentRobotsList) {
+                    stringList.add(et.getInfoToCSV());
+                }
+                ReadAndWriteFile.writeFileCSV(AUTO_FILE, stringList, false);
+            }
+            return removed;
+        } catch (Exception e) {
+            System.out.println("nhap sai thong tin" + e.getMessage());
+        }
         return false;
     }
 
