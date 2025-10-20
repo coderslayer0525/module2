@@ -31,6 +31,6 @@ public class DuaHauService implements IDuaHauService {
 
     @Override
     public DuaHau findByName(String tenTraiCay) {
-        return duaHauRepository.findByName(tenTraiCay);
+        return duaHauRepository.findByName(tenTraiCay   );
     }
 }
