@@ -1,5 +1,7 @@
 package Demotapcode.quanly_traicay.repository;
 
+import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
+import Demotapcode.phamarcy_managerment.entity.ThuocTiem;
 import Demotapcode.quanly_traicay.entity.DuaHau;
 import ss8_mvc_quanly_phuongtien.util.ReadAndWriteFile;
 
@@ -55,6 +57,25 @@ public class DuaHauRepository implements IDuaHauRepository {
     }
 
     @Override
+    public boolean delete(int ngaySanXuat) {
+        try {
+            List<DuaHau> duaHauList = findAll();
+            boolean removed = duaHauList.removeIf(t -> t.getNgaySanXuat() == ngaySanXuat);
+            if (removed) {
+                List<String> stringList = new ArrayList<>();
+                for (DuaHau t : duaHauList) {
+                    stringList.add(t.getInfoToCSV());
+                }
+                ReadAndWriteFile.writeFileCSV(FILE_TRAI, stringList, false);
+            }
+            return removed;
+        } catch (Exception e) {
+            System.out.println("nhap sai thong tin" + e.getMessage());
+        }
+        return false;
+    }
+
+    @Override
     public boolean update(String tenTraiCay, DuaHau newDuaHau) {
         try {
             List<DuaHau> duaHauList = findAll();
@@ -79,5 +100,20 @@ public class DuaHauRepository implements IDuaHauRepository {
             System.out.println("Loi Du Lieu" + e.getMessage());
             return false;
         }
+    }
+
+    @Override
+    public DuaHau findByName(String tenTraiCay) {
+        try {
+            List<DuaHau> duaHauList = findAll();
+            for (DuaHau t : duaHauList) {
+                if (t.getTenTraiCay().equalsIgnoreCase(tenTraiCay)) {
+                    return t;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(" loi khong tim thay " + e.getMessage());
+        }
+        return null;
     }
 }

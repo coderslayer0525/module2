@@ -18,12 +18,16 @@ public class RunApp {
         final int EXIT = 2;
         boolean drag = true;
         while (drag){
-            System.out.println("===================");
-            System.out.println("=== CODEGYMFARM ===");
-            System.out.println("===================");
-            System.out.println("Menu option's fruils" +
-                    "\n 1. Dua Hau." +
-                    "\n 2. Thoat app.");
+            System.out.println("=====================================");
+            System.out.printf("%-30s%n", "=== CODEGYMFARM ===");
+            System.out.println("=====================================");
+            System.out.printf("%-30s%n", "Menu option's fruit:");
+            System.out.printf("| %-3s | %-20s |%n", "STT", "Tên chức năng");
+            System.out.println("-------------------------------------");
+            System.out.printf("| %-3d | %-20s |%n", DUAHAU, "Quản Lý Dưa Hấu");
+            System.out.printf("| %-3d | %-20s |%n", EXIT, "Thoát app");
+            System.out.println("=====================================");
+            System.out.print(" Nhập lựa chọn của bạn: ");
             int choice = Integer.parseInt(sc.nextLine());
             switch (choice){
                 case DUAHAU :

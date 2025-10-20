@@ -10,7 +10,10 @@ public interface IDuaHauRepository {
 
     boolean add(DuaHau duaHau);
 
+    boolean delete(int ngaySanXuat);
+
 
     boolean update(String tenTraiCay, DuaHau newDuaHau);
 
+    DuaHau findByName(String tenTraiCay);
 }

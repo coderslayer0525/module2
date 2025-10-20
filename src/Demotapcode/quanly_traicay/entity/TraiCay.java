@@ -8,16 +8,18 @@ public abstract class TraiCay {
     private String xuatXu;
     private int giaThanh;
 
-    public TraiCay(){
+    public TraiCay() {
     }
-    public TraiCay(String tenTraiCay,String loaiTraiCay,int ngaySanXuat,int hanSuDung,String xuatXu,int giaThanh){
+
+    public TraiCay(String tenTraiCay, String loaiTraiCay, int ngaySanXuat, int hanSuDung, String xuatXu, int giaThanh) {
         this.tenTraiCay = tenTraiCay;
-        this.loaiTraiCay= loaiTraiCay;
+        this.loaiTraiCay = loaiTraiCay;
         this.ngaySanXuat = ngaySanXuat;
         this.hanSuDung = hanSuDung;
         this.xuatXu = xuatXu;
         this.giaThanh = giaThanh;
     }
+
 
     public String getTenTraiCay() {
         return tenTraiCay;

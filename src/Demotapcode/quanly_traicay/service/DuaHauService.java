@@ -20,7 +20,17 @@ public class DuaHauService implements IDuaHauService {
     }
 
     @Override
+    public boolean delete(int ngaySanXuat) {
+        return duaHauRepository.delete(ngaySanXuat);
+    }
+
+    @Override
     public boolean update(String tenTraiCay, DuaHau newDuaHau) {
         return duaHauRepository.update(tenTraiCay, newDuaHau);
+    }
+
+    @Override
+    public DuaHau findByName(String tenTraiCay) {
+        return duaHauRepository.findByName(tenTraiCay);
     }
 }
