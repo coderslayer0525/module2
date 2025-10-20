@@ -86,7 +86,6 @@ public class ThuocTiemRepository implements IThuocTiemRepository {
         return false;
     }
 
-
     @Override
     public boolean update(int maThuoc, ThuocTiem newThuocTiem) {
         try {

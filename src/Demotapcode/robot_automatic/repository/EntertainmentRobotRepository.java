@@ -1,8 +1,6 @@
 package Demotapcode.robot_automatic.repository;
 
 
-import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
-import Demotapcode.phamarcy_managerment.entity.ThuocTiem;
 import Demotapcode.robot_automatic.entity.EntertainmentRobots;
 import ss8_mvc_quanly_phuongtien.util.ReadAndWriteFile;
 
@@ -88,7 +86,7 @@ public class EntertainmentRobotRepository implements  IEntertainmentRobotReposit
 
     @Override
     public boolean update(int id, EntertainmentRobots entertainmentRobots) {
-        return false;
+        return  true;
     }
 
     @Override

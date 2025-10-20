@@ -8,7 +8,7 @@ import Demotapcode.phamarcy_managerment.view.ThuocNuocView;
 import java.util.List;
 import java.util.Scanner;
 
-public class ThuocNuocController {
+public class    ThuocNuocController {
     private final IThuocNuocService thuocNuocService = new ThuocNuocService();
 
 
