@@ -24,7 +24,7 @@ public class DiCho extends  ChiTieu {
                 "\n• Ngày chi              : " + getNgayChi() +
                 "\n• Số tiền chi           : " + getSoTienChi() +
                 "\n• Mô tả                 : " + getMoTa() +
-                "\n• Chuyển khoản thanh toán : " + (chuyenKhoan ? "True" : "false") +
+                "\n• Chuyển khoản thanh toán : " + (chuyenKhoan ? "Co" : "khong") +
                 "\n------------------------------------------";
     }
 
