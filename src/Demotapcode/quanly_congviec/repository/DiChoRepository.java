@@ -42,14 +42,31 @@ public class DiChoRepository implements IDiChoRepository {
                     e.printStackTrace();
                 }
             }
-            return diChoList;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return diChoList;
     }
+
+    public int getNextId() {
+        List<DiCho> diChoList = findAll();
+        if (diChoList.isEmpty()) {
+            return 1;
+        }
+        int maxId = 0;
+        for (DiCho t : diChoList) {
+            if (t.getMaChiTieu() > maxId) {
+                maxId = t.getMaChiTieu();
+            }
+        }
+        return maxId + 1;
+    }
+
 
     @Override
     public boolean add(DiCho diCho) {
+        int nextId = getNextId();
+        diCho.setMaChiTieu(nextId);
         List<String> stringList = new ArrayList<>();
         stringList.add(diCho.getInfoToCSV());
         try {

@@ -63,8 +63,8 @@ public class DiChoController {
                         System.out.println("khong tim thay ngay san xuat da nhap.");
                     }
                 case FIND:
-                    System.out.println("");
-                    System.out.println("Ten Chi Tieu:");
+                    System.out.println("Tim hoa don chi tieu :");
+                    System.out.println("Ma Chi Tieu:");
                     Scanner scanner = new Scanner(System.in);
                     int maChiTieu = Integer.parseInt(scanner.nextLine());
                     DiCho tim = diChoService.findById(maChiTieu);

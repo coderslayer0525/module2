@@ -17,12 +17,12 @@ public class DiCho extends  ChiTieu {
     @Override
     public String toString(){
         return "DiCHo--{"+
-                "-MaChiTieu"+getMaChiTieu()+
-                "-TenChiTieu"+getTenChiTieu()+
-                "-NgayChi"+getNgayChi()+
-                "-SoTienChi"+getSoTienChi()+
-                "-MoTa"+getMoTa()+
-                "-CachThanhToan"+chuyenKhoan+
+                "-MaChiTieu="+getMaChiTieu()+
+                "-TenChiTieu="+getTenChiTieu()+
+                "-NgayChi="+getNgayChi()+
+                "-SoTienChi="+getSoTienChi()+
+                "-MoTa="+getMoTa()+
+                "-ChuyenKhoanthanhtoan="+chuyenKhoan+
                 "}--";
     }
 
