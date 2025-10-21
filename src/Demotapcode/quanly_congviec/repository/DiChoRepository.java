@@ -1,17 +1,12 @@
 package Demotapcode.quanly_congviec.repository;
 
-import Demotapcode.game_online.entity.PhapSu;
-import Demotapcode.phamarcy_managerment.entity.ThuocNuoc;
-import Demotapcode.phamarcy_managerment.entity.ThuocTiem;
-import Demotapcode.phamarcy_managerment.exception.ThuocException;
 import Demotapcode.quanly_congviec.entity.DiCho;
-import Demotapcode.quanly_traicay.entity.DuaHau;
 import ss8_mvc_quanly_phuongtien.util.ReadAndWriteFile;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
+
 
 public class DiChoRepository implements IDiChoRepository {
     private final String CHI_TIEU = "Demotapcode/quanly_congviec/data/dicho.csv";
@@ -135,7 +130,6 @@ public class DiChoRepository implements IDiChoRepository {
         } catch (Exception e) {
             System.out.println(" Loi khong tim thay" + e.getMessage());
         }
-
         return null;
     }
 }

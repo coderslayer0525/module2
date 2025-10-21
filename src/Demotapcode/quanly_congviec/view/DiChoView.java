@@ -25,13 +25,43 @@ public class DiChoView {
             int maChiTieu = Integer.parseInt(sc.nextLine());
 
             System.out.println("ten chi tieu");
-            String tenChiTieu= sc.nextLine();
+            String tenChiTieu;
+            while (true){
+                System.out.println("Nhap chi tieu:(Khoang Trang va viet hoa chu dau");
+                tenChiTieu=sc.nextLine().trim();
+                if (!tenChiTieu.matches("^[A-Za-z0-9\\- ]{2,50}$")){
+                    System.out.println("Khong hop le :(vi du: Mua Hanh");
+                }else {
+                    break;
+                }
+            }
+
 
             System.out.println("Ngay chi");
-            int ngayChi = Integer.parseInt(sc.nextLine());
+            int ngayChi;
+            while (true){
+                System.out.println("ngay chi phai bat dau sau ngay 5");
+                ngayChi =Integer.parseInt(sc.nextLine());
+                if (ngayChi > 5){
+                    System.out.println("hop le");
+                    break;
+                }else {
+                    System.out.println("ngay chi bat dau tu ngay 5-> 31");
+                }
+            }
 
             System.out.println("so tien");
-            int soTienChi = Integer.parseInt(sc.nextLine());
+            int soTienChi;
+            while (true){
+                System.out.println("So tien Chi khong duoc nhieu hon 300k");
+                soTienChi=Integer.parseInt(sc.nextLine());
+                if (soTienChi<300){
+                    System.out.println("so tien hop le");
+                    break;
+                }else {
+                    System.out.println("vui long giam chi phi");
+                }
+            }
 
             System.out.println("mo ta");
             String moTa = sc.nextLine();
