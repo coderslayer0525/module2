@@ -36,8 +36,9 @@ public class DiChoView {
             System.out.println("mo ta");
             String moTa = sc.nextLine();
 
-            System.out.println("hinh Thuc Chi");
-            boolean chuyenKhoan = sc.nextBoolean();
+            System.out.println("Chuyen khoan ?");
+            String nhap = sc.nextLine().trim().toLowerCase();
+            boolean chuyenKhoan = nhap.equals("co");
 
             return new DiCho(maChiTieu,tenChiTieu,ngayChi,soTienChi,moTa,chuyenKhoan);
         } catch (NumberFormatException e) {
