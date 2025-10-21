@@ -16,14 +16,16 @@ public class DiCho extends  ChiTieu {
     }
     @Override
     public String toString(){
-        return "DiCHo--{"+
-                "-MaChiTieu="+getMaChiTieu()+
-                "-TenChiTieu="+getTenChiTieu()+
-                "-NgayChi="+getNgayChi()+
-                "-SoTienChi="+getSoTienChi()+
-                "-MoTa="+getMoTa()+
-                "-ChuyenKhoanthanhtoan="+chuyenKhoan+
-                "}--";
+        return  "\n╔════════════════════════════════════════╗" +
+                "\n║               DiCho Info               ║" +
+                "\n╚════════════════════════════════════════╝" +
+                "\n• Mã chi tiêu           : " + getMaChiTieu() +
+                "\n• Tên chi tiêu          : " + getTenChiTieu() +
+                "\n• Ngày chi              : " + getNgayChi() +
+                "\n• Số tiền chi           : " + getSoTienChi() +
+                "\n• Mô tả                 : " + getMoTa() +
+                "\n• Chuyển khoản thanh toán : " + (chuyenKhoan ? "True" : "false") +
+                "\n------------------------------------------";
     }
 
     public String getInfoToCSV() {
