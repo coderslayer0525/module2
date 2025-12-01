@@ -58,14 +58,14 @@ public class DepController {
                     break;
                 case SER:
                     System.out.println("ma so");
-                    Scanner scanner = new Scanner(System.in);
-                    int maSo = Integer.parseInt(scanner.nextLine());
-                    Dep tim = depService.findById(maSo);
-                    if (tim != null) {
-                        System.out.println("Tim thay NV :" + tim);
-                    } else {
-                        System.out.println("Khong tim thay thong tin vua nhap.");
-                    }
+                        Scanner scanner = new Scanner(System.in);
+                        int maSo = Integer.parseInt(scanner.nextLine());
+                        Dep tim = depService.findById(maSo);
+                        if (tim != null) {
+                            System.out.println("Tim thay NV :" + tim);
+                        } else {
+                            System.out.println("Khong tim thay thong tin vua nhap.");
+                        }
                     break;
                 case SERA:
                     System.out.println("Nhập Mã ADMIN :");

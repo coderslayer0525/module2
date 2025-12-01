@@ -38,7 +38,7 @@ public class DepRepository implements IDepRepository {
                     } catch (MassaException e) {
                         System.out.println("Chuyen Du lieu Loi" + line);
                     } catch (Exception e) {
-                        System.out.println("Doc File loi" + e.getMessage());
+                        System.out.println("Doc File loi" + e.getMessage());    
                         e.printStackTrace();
                     }
                 }
